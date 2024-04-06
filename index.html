@@ -1,28 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <textarea name="hello" id="text" cols="30" rows="10"></textarea>
-  <script>
-    // function power() {
-    //   const src = document.getElementById("text");
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawer Menu</title>
+</head>
+<style>
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-    //   setTimeout((callback) => {
-    //     src.innerHTML = "heklll";
-    //     console.log();
-    //     src.onload = function alsert() {};
-    //   }, 2000);
-    // }
-    // power();
+.drawer-toggle {
+    display: none;
+}
 
-    // function alsert() {
-    //   alert("you entred somthing");
-    // }
-    // alsert();
+.drawer-toggle-label {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
 
-    
-  </script>
+.drawer {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Adjusted the left value */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s ease; /* Added transition property */
+}
+
+.drawer nav {
+    margin-top: 50px;
+}
+
+.drawer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer ul li {
+    padding: 15px;
+}
+
+.drawer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.drawer ul li a:hover {
+    color: #ffd700;
+}
+
+.drawer-toggle:checked + .drawer {
+    left: 0;
+}
+
+</style>
+<body>
+  <input type="checkbox" id="drawer-toggle" class="drawer-toggle">
+  <label for="drawer-toggle" class="drawer-toggle-label">Menu</label>
+  <div class="drawer">
+      <nav>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+          </ul>
+      </nav>
+  </div>
+</body>
 </html>
